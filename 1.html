@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        定义一个 dayOfYear 函数，接受一个字符串时间，返回一个 
+        number 来表示是该日期年中第几天。
+    </p>
+    <a href="index.html">index</a>
+</body>
+<script>
+    var str = "2022-08-01";
+    console.log(dayOfYear(str));
+    
+
+    function dayOfYear(dateStr) {
+         var date = new Date(dateStr);
+        //  console.log(date);
+         
+         var y = date.getFullYear(dateStr);
+         var M = date.getMonth(dateStr);
+         var d = date.getDate(dateStr);
+
+         var startDate = new Date(y,0,1);
+        //  console.log(startDate);
+         var time1 = startDate.getTime(startDate);
+        //  console.log(time1);
+
+         var time2 = date.getTime(date);
+        //  console.log(time2);
+
+         var diff = time2-time1;
+         var diffday = diff/(1000*60*60*24);
+         return diffday;
+
+    }
+
+
+</script>
+</html>
