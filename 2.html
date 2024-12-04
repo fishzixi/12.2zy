@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        # 1.【时间增加】返回增加一定时间的时间,各个传入的单位
+        对大小写不敏感，支持缩写和复数。 请注意，缩写
+        是区分大小写的
+    </p>
+    <a href="index.html">index</a>
+</body>
+<script>
+    // var add0 = [7,"day"];
+    // var add1 = [7, "day", "2024/10/8 12:00:23"];
+    // var add2 = [18, "week", "2024/10/8 12:00:23"];
+    console.log(f1(7,"day"));
+    console.log(f1(7, "day", "2024/10/8 12:00:23"));
+    console.log(f1(18, "week", "2024/10/8 12:00:23"));
+
+
+    function f1(addnum,unit,time) {
+        var date = new Date(time);
+        console.log(date);
+        // var y = date.getFullYear(date);
+        // var M = date.getMonth(date);
+        // var d = date.getDate(date);
+        // var h = date.getHours(date);
+        // var m = date.getMinutes(date);
+        // var s = date.getSeconds(date);
+
+        var units ={
+            'year': 1000 * 60 * 60 * 24 * 365,
+            'month': 1000 * 60 * 60 * 24 * 30,
+            'day': 1000 * 60 * 60 * 24,
+            'week':1000 * 60 * 60 * 24*7,
+            'hour': 1000 * 60 * 60,
+            'minute': 1000 * 60,
+            'second': 1000,
+        }
+        
+        var newDate = date.getTime()+units[unit]*addnum;
+        return newDate;
+
+       
+           
+    }
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        定义一个 isBetween 函数 返回一个 boolean 来展示一个时间
+        是否介于两个时间之间。
+    </p>
+    <a href="index.html">index</a>
+</body>
+<script>
+var date1 = "2010-10-18";
+var date2 = "2010-10-19";
+var date3="2010-10-25";
+console.log(isBetween(date1,date2,date3));
+
+
+function isBetween(t1,t2,t3){
+    //t1<t2<t3  t2<t1<t3 t1<t3<t2
+    //t3 t2 t1
+    var newT1 = new Date(t1).getTime();
+    var newT2 = new Date(t2).getTime();
+    var newT3 = new Date(t3).getTime();
+    
+    if(newT1<newT2&&newT2<newT3){
+        return true;
+    }else{
+        return false;
+    }
+
+
+}
+
+
+</script>
+</html>

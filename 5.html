@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> 定义一个函数 weekOfYear 返回参数年份中有多少个星期。</p>
+</body>
+<script>
+
+    console.log(weekOfYear("2024-12-1"));
+    function weekOfYear(date) {
+        var date1 = new Date(date);
+        var y = date1.getMonth();
+        console.log(y);
+        var d = date1.getDate();
+        console.log(d);
+         var weeknum = ((y+1)*30+d)/7;
+        return Math.ceil(weeknum)+"个星期";
+
+    }
+</script>
+</html>
